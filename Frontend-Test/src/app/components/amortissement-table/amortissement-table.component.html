@@ -1,0 +1,26 @@
+<div *ngIf="amortissement" class="container">
+  <h2>Tableau d'amortissement</h2>
+  
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th>Periode</th>
+          <th>Solde début</th>
+          <th>Intérêts</th>
+          <th>Capital remboursé</th>
+          <th>Solde fin</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ligne of amortissement">
+          <td>{{ ligne.periode }}</td>
+          <td>{{ ligne.soldeDebut | currency:'TND':'symbol':'1.2-2' }}</td>
+          <td>{{ ligne.interets | currency:'TND':'symbol':'1.2-2' }}</td>
+          <td>{{ ligne.capitalRembourse | currency:'TND':'symbol':'1.2-2' }}</td>
+          <td>{{ ligne.soldeFin | currency:'TND':'symbol':'1.2-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

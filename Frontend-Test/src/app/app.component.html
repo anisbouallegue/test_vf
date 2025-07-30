@@ -1,0 +1,17 @@
+<div class="app-container">
+  <h1>Calculateur</h1>
+  <div *ngIf="chargement" class="chargement">Calcul en cours...</div>
+  
+  <app-form (calculer)="onCalculer($event)"></app-form>
+
+  <div *ngIf="!resultat && !chargement" class="aucun-resultat">
+    Aucun résultat.
+  </div>
+  
+  <app-result *ngIf="resultat" [resultat]="resultat"></app-result>
+  
+  <app-amortissement-table 
+    *ngIf="resultat?.amortissement" 
+    [amortissement]="resultat.amortissement">
+  </app-amortissement-table>
+</div>

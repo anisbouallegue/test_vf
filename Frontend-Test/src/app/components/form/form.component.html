@@ -1,0 +1,46 @@
+<form [formGroup]="formulaire" (ngSubmit)="onSubmit()" class="form">
+  
+
+  <div class="form-group">
+    <label>Montant de l'achat</label>
+    <input type="number" formControlName="montantAchat" class="form-control">
+    <div *ngIf="formulaire.get('montantAchat').invalid" class="erreur">
+      Montant invalide
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Fonds propres</label>
+    <input type="number" formControlName="fondsPropres" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Durée (mois)</label>
+    <input type="number" formControlName="dureeMois" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Taux annuel (%)</label>
+    <input type="number" step="0.01" formControlName="tauxAnnuel" class="form-control">
+  </div>
+  
+  <div class="form-group">
+    <label>
+      <input type="checkbox" [checked]="fraisManuels"  (change)="onFraisManuelsChange($event)">
+      Frais d'achat manuels
+    </label>
+  </div>
+
+  <div class="form-group" *ngIf="fraisManuels">
+    <label>Frais d'achat</label>
+    <input type="number" formControlName="fraisAchat" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Montant à emprunter </label>
+    <input type="number" formControlName="montantEmprunter" class="form-control">
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!formulaire.valid">Calculer</button>
+</form>
+

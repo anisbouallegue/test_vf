@@ -1,0 +1,40 @@
+<div *ngIf="resultat" class="container">
+  <h2>Résultats:</h2>
+  <div class="item">
+    <span>Montant de l'achat :</span>
+    <span>{{ resultat.montantAchat | currency:'TND':'symbol':'1.2-2' }}</span>
+  </div>
+<div class="item">
+    <span>Frais d'achat :</span>
+    <span>{{ resultat.fraisAchat | currency:'TND':'symbol':'1.2-2' }}</span>
+  </div>
+<div class="item">
+    <span>Fonds propres :</span>
+    <span>{{ resultat.fondsPropres | currency:'TND':'symbol':'1.2-2' }}</span>
+  </div>
+  
+  <div class="item">
+    <span>Montant emprunté brut :</span>
+    <span>{{ resultat.montantEmprunteBrut | currency:'TND':'symbol':'1.2-2' }}</span>
+  </div>
+  
+  <div class="item">
+    <span>Frais d'hypothèque (2%) :</span>
+    <span>{{ resultat.fraisHypotheque | currency:'TND':'symbol':'1.2-2' }}</span>
+  </div>
+  
+  <div class="item">
+    <span>Montant emprunté net :</span>
+    <span>{{ resultat.montantEmprunteNet | currency:'TND':'symbol':'1.2-2' }}</span>
+  </div>
+  
+  <div class="item">
+    <span>Taux mensuel :</span>
+    <span>{{ resultat.tauxMensuel | number:'1.3-3' }}%</span>
+  </div>
+  
+  <div class="item highlight">
+    <span>Mensualité :</span>
+    <span>{{ resultat.mensualite | currency:'TND':'symbol':'1.2-2' }}</span>
+  </div>
+</div>
