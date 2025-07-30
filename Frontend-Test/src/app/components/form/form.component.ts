@@ -33,10 +33,6 @@ export class FormComponent {
 
     if (this.fraisManuels) {
       fraisAchatControl.enable();
-      // const fraisAuto = this.formulaire.get('montantAchat').value > 50000 
-      //   ? this.formulaire.get('montantAchat').value * 0.1 
-      //   : 0;
-      // fraisAchatControl.setValue(fraisAuto);
     } else {
       fraisAchatControl.disable();
       fraisAchatControl.setValue(null);
